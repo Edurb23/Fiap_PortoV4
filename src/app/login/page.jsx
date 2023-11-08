@@ -20,7 +20,8 @@ export default function Login() {
                 <Link href="/">esqueci minha senha</Link>
             </div>
             <div>
-                <button>Criar Conta</button>
+                <Link href="/cadastro"><button>Criar Conta</button></Link>
+                
                 <button>Login</button>
             </div>
         </form>
