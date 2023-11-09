@@ -1,6 +1,61 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,900&family=Spinnaker&display=swap');
 
+.cabecalho { 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
+    nav{
+        display: flex;
+         
+         align-items: center;
+         width: 70%;
+         height: 100%;
+        
+        
+        
+       
+
+        ul{
+            
+            list-style: none;
+
+
+            li{ 
+
+                display: inline;
+                padding: 0;
+                
+               
+
+                a{ 
+                    
+                    text-decoration: none;
+                    font-weight: bold;
+                    font-size: 40px;
+                    padding: 4%;
+                    font-family: 'Roboto', sans-serif;
+                    font-family: 'Spinnaker', sans-serif;
+                    border: 2px solid black;
+                    border-radius: 14%;
+                    color: #000;
+                    margin: 5% ;
+                    margin-bottom: 50px;
+                   
+                }
+
+            }
+            
+
+            
+      
+        }
+
+       
+    }
+
+    
+}
 
 
 

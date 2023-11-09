@@ -1,12 +1,16 @@
 import React from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import "./cabecalho.scss"
+import "../../app/css/main.scss"
 
 export default function Cabecalho() {
   return (
     <div>
          <header className="cabecalho">
-            <img src="/img/porto-seguro-novo-logo-444639E178-seeklogo.com.png" alt="LOGO PORTO SEGURO" />
+            <Image src= ""
+            alt ="Imagem da logo da porto seguro"
+            />
             <nav>
                 
                 <ul>
