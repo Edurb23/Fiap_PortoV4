@@ -47,23 +47,23 @@ export default function Rodape() {
                 <li>
                     <a href="https://br.linkedin.com/" target="_blank">
                         <Image src="/images/facebook.png"
-                        width={30}
-                        height={30}/>
+                        width={60}
+                        height={60}/>
                        
                     </a>
                 </li>
                 <li>
                     <a href="https://www.facebook.com/?locale=pt_BR" target="_blank"> 
                     <Image src="/images/icons8-linkedin.png"
-                        width={30}
-                        height={30}/>
+                        width={60}
+                        height={60}/>
                     </a>
                 </li>
                 <li>
                     <a href="https://twitter.com/" target="_blank"> 
                     <Image src="/images/twitter.png"
-                        width={30}
-                        height={30}/>
+                        width={60}
+                        height={60}/>
                     </a>
                 </li>
             </ul>
