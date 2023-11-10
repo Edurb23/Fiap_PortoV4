@@ -49,7 +49,7 @@ export default function Rodape() {
                 <li>
                     <Link href="https://br.linkedin.com/" target="_blank">
                     
-                        <Image src="/images/facebook.png"
+                        <Image src="/images/icons8-linkedin.png"
                         width={60}
                         height={60}/>
 
@@ -58,18 +58,26 @@ export default function Rodape() {
                     
                 </li>
                 <li>
-                    <a href="https://www.facebook.com/?locale=pt_BR" target="_blank"> 
-                    <Image src="/images/icons8-linkedin.png"
+                    
+                    <Link href="https://www.facebook.com/?locale=pt_BR" target="_blank">
+                    
+                    <Image src="/images/facebook.png"
                         width={60}
                         height={60}/>
-                    </a>
+
+                    </Link>
+                   
                 </li>
                 <li>
-                    <a href="https://twitter.com/" target="_blank"> 
+                    <Link href="https://twitter.com/" target="_blank">
+                    
                     <Image src="/images/twitter.png"
                         width={60}
                         height={60}/>
-                    </a>
+                    
+                    </Link>
+                    
+                    
                 </li>
             </ul>
             </div>
