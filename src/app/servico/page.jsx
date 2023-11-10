@@ -2,6 +2,17 @@ import React from 'react'
 
 export default function Servicos() {
   return (
-    <div>Servicos</div>
+    <>
+      <section className="conteudo">
+
+        <h1>Serviços</h1>
+        <div className="texto-descritivo">
+     
+
+</div>
+
+
+</section>
+    </>
   )
 }
