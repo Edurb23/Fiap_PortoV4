@@ -20,7 +20,7 @@ export default function Cabecalho() {
                         <Link href="/" className='a'>Home</Link>
                     </li>
                     <li>
-                        <Link href="/" className='a'>Serviço</Link>
+                        <Link href="/servico" className='a'>Serviço</Link>
                     </li>
                     <li>
                         <Link href="/integrantes" className='a'>Integrantes</Link>
