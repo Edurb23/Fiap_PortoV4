@@ -1,6 +1,8 @@
 import React from 'react'
 import Image from 'next/image'
 import './rodape.scss'
+import Link from 'next/link'
+
 
 export default function Rodape() {
   return (
@@ -45,12 +47,15 @@ export default function Rodape() {
 
             <ul>
                 <li>
-                    <a href="https://br.linkedin.com/" target="_blank">
+                    <Link href="https://br.linkedin.com/" target="_blank">
+                    
                         <Image src="/images/facebook.png"
                         width={60}
                         height={60}/>
+
+                    </Link>
                        
-                    </a>
+                    
                 </li>
                 <li>
                     <a href="https://www.facebook.com/?locale=pt_BR" target="_blank"> 

@@ -9,7 +9,7 @@ export default function Integrantes () {
     
     <Colaboradores/>
 
-    <Link className="repositorio" href="https://github.com/Edurb23/Fiap_Porto" target="_blank"> Nosso Repositorio</Link>
+    <Link className="repositorio" href="https://github.com/Edurb23/Fiap_PortoV4" target="_blank"> Nosso Repositorio</Link>
 
     </>
   )
