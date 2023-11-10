@@ -1,0 +1,105 @@
+
+div{ 
+
+    .inicio {
+        display: flex;
+        justify-content: center;
+       
+      
+        .imgLogo{
+          display: flex;
+          justify-content: center;
+        
+          
+        }
+      
+        h1 {
+          display: block;
+          width: 531px;
+          height: 185px;
+          font-size: 40px;
+          padding: 5%;
+          margin-top: 5%;
+          margin-right: 5%;
+
+          
+      
+          p {
+            width: 498px;
+            height: 72px;
+            font-size: 16px;
+            margin-top: 5%;
+          }
+      
+          button {
+            width: 301px;
+            height: 68px;
+            border-radius: 14px;
+            padding: 20px 35px 20px 35px;
+            background-color: #000000;
+            color: #939BF5;
+            &:hover{
+              background-color: #939BF5;
+              color: #000000;
+            }
+          }
+        }
+      }
+
+      .servicos {
+        display: flex;
+        flex-direction: column;
+      
+        a {
+          text-align: center;
+          font-weight: 500;
+          font-size: 40px;
+          border: 1px solid;
+          width: 10%;
+          border-radius: 7px;
+          padding: 0 8px 0 8px;
+          margin-left: 45%;
+          background-color: #000000;
+          color: #939BF5;
+        }
+      
+        p {
+          text-align: center;
+          font-weight: 400;
+          font-size: 24px;
+          line-height: 24px;
+          padding: 2%;
+        }
+      }
+      
+      .cards-servicos {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+      
+        div {
+          width: 978px;
+          height: 308px;
+          border-radius: 45px;
+          background-color: #000000;
+          color: #939BF5;
+          margin-left: 23%;
+          padding: 2%;
+          margin-top: 3%;
+      
+          h3 {
+            font-size: 26px;
+            margin: 1%;
+          }
+
+          .cardimg{
+            justify-content: center;
+          }
+        }
+      
+      }
+   
+
+
+  
+    }

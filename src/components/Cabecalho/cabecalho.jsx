@@ -8,7 +8,9 @@ export default function Cabecalho() {
   return (
     <div>
          <header className="cabecalho">
-            <Image src= ""
+            <Image src= "/images/logo.png" 
+            width={500}
+            height={250}
             alt ="Imagem da logo da porto seguro"
             />
             <nav>
