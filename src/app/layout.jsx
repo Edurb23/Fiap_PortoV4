@@ -1,4 +1,5 @@
 import Cabecalho from "@/components/Cabecalho/cabecalho"
+import Rodape from "@/components/Rodape/rodape"
 
 import { Inter } from 'next/font/google'
 
@@ -20,6 +21,8 @@ export default function RootLayout({ children }) {
         <Cabecalho/>
         
         {children}</body>
+
+        <Rodape/>
     </html>
   )
 }

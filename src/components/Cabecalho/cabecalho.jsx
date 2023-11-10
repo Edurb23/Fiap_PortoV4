@@ -9,7 +9,7 @@ export default function Cabecalho() {
     <div>
          <header className="cabecalho">
             <Image src= "/images/logo.png" 
-            width={500}
+            width={600}
             height={250}
             alt ="Imagem da logo da porto seguro"
             />
