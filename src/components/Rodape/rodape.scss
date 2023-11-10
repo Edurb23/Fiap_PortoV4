@@ -1,0 +1,22 @@
+.footer {
+    background-color: #191A23;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  
+    .conteudo-1 {
+      flex: 1;
+  
+      ul {
+        list-style: none;
+        padding: 0;
+  
+        li {
+          margin-bottom: 10px;
+        }
+      }
+    }
+}
