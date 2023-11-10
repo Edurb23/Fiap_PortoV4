@@ -1,4 +1,5 @@
 import React from 'react'
+import './colaborador.scss'
 
 export default function Colaborador() {
   return (
