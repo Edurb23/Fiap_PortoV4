@@ -1,6 +1,7 @@
 import React from 'react'
 import "./css/home.scss"
 import Image from 'next/image'
+import Colaboradores from '@/components/Colaboradores/colaborador'
 
 export default function page() {
   return (
@@ -80,7 +81,7 @@ export default function page() {
         </div>
       </section>
 
-
+      <Colaboradores/>
 
     </>
   )
