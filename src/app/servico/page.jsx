@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
+import './servico.scss'
 
 export default function Servicos() {
     return (
