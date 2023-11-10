@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,900&family=Spinnaker&display=swap');
 
 div{ 
 
@@ -102,4 +103,56 @@ div{
 
 
   
+    }
+
+    .OWP{ 
+
+      display: flex;
+      flex-direction: column;
+      padding-top: 12%;
+
+      a {
+        width: 220px;
+        height: 40px;
+        border-radius: 7px;
+        padding: 0px 7px 0px 7px;
+        background-color: #000;
+        color: #939BF5;
+        font-size: 22px;
+        text-align: center;
+        margin-left: 45%;
+      }
+      p {
+        text-align: center;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 24px;
+        padding: 2%;
+        margin-left: 5%;
+      }
+
+    }
+
+    .cards{
+      display: flex;
+      flex-direction: column;
+
+      div{
+        background-color: #F3F3F3;
+        border-radius: 45px;
+        text-align: center;
+        font-size: 15px;
+        width: 1234px;
+        height: 45px;
+        padding: 41px 60px 41px 60px;
+        margin-left: 15%;
+        margin-top: 3%;
+         box-shadow: grey 5px 5px 5px 5px;
+      }
+      h1 {
+        font-size: 38px;
+        color: #939BF5;
+        font-family: 'Roboto', sans-serif;
+        font-family: 'Spinnaker', sans-serif;
+      }
     }
