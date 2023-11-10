@@ -1,5 +1,7 @@
 import React from 'react'
 import './colaborador.scss'
+import Image from 'next/image'
+import Link from 'next/link'
 
 export default function Colaborador() {
   return (
@@ -13,7 +15,14 @@ export default function Colaborador() {
     <div className="cabecalho">
     <h4> Eduardo Reis Braga </h4>
     <h5> Aluno na fiap  rm551987  </h5>
-    <img src="/img/icons8-linkedin.png" alt="Linkidin logo" />
+    <Link href="https://www.linkedin.com/in/eduardo-reis-braga-681982251/" target="_blank"> 
+    
+    <Image className='cardimg' src="/images/icons8-linkedin.png"
+              width={40}
+              height={40} 
+               
+              />
+    </Link>
     </div>
     <div className="rodape">
     
@@ -25,7 +34,14 @@ export default function Colaborador() {
     <div className="cabecalho">
     <h4> Raphael Custodio Pabst</h4>
     <h5> Aluno na fiap  rm98525 </h5>
-    <img src="/img/icons8-linkedin.png" alt="Linkidin logo" />
+    <Link href="https://www.linkedin.com/in/raphael-pabst/" target="_blank"> 
+    
+    <Image className='cardimg' src="/images/icons8-linkedin.png"
+              width={40}
+              height={40} 
+               
+              />
+    </Link>
     </div>
     <div className="rodape">
     
@@ -39,7 +55,14 @@ export default function Colaborador() {
     <h5> Aluno na fiap  rm550821  </h5>
     
 
-    <img src="/img/icons8-linkedin.png" alt="Linkidin logo" />
+    <Link href="https://www.linkedin.com/in/silviojunioor/" target="_blank"> 
+    
+    <Image className='cardimg' src="/images/icons8-linkedin.png"
+              width={40}
+              height={40} 
+               
+              />
+    </Link>
   
     </div>
     <div className="rodape">
@@ -54,7 +77,14 @@ export default function Colaborador() {
     <div className="cabecalho">
     <h4> Leonardo Barral </h4>
     <h5> Aluno na fiap  rm551472   </h5>
-    <img  src="/img/icons8-linkedin.png" alt="Linkidin logo" />
+    <Link href="https://www.linkedin.com/in/leonardoribeirobarral/" target="_blank"> 
+    
+    <Image className='cardimg' src="/images/icons8-linkedin.png"
+              width={40}
+              height={40} 
+               
+              />
+    </Link>
     </div>
     <div className="rodape">
     
@@ -65,7 +95,14 @@ export default function Colaborador() {
     <div className="cabecalho">
     <h4> Pedro Henrique Braga Alves </h4>
     <h5> Aluno na fiap  rm552000   </h5>
-    <img src="/img/icons8-linkedin.png" alt="Linkidin logo" />
+    <Link href="https://www.linkedin.com/in/pedro-henrique-1883ba268/" target="_blank"> 
+    
+    <Image className='cardimg' src="/images/icons8-linkedin.png"
+              width={40}
+              height={40} 
+               
+              />
+    </Link>
     </div>
      <div className="rodape">
     
