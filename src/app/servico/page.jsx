@@ -16,14 +16,15 @@ export default function Servicos() {
                 </div>
 
                 <Image src="/images/chatbot1.png"
-                    width={100}
-                    height={100}
-
+                    width={800}
+                    height={900}
+                    className="imagemchat1"
                 />
 
                 <Image src="/images/chatbot2.png"
-                    width={100}
-                    height={100}
+                    width={800}
+                    height={900}
+                    className="imagemchat1"
 
                 />
 
