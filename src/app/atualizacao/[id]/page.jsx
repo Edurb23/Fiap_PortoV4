@@ -78,8 +78,8 @@ export default function Atualiza({params}) {
                 method:"Put",
                 headers:{
                     "Content-Type":"application/json"
-                    
                 },
+                
                 body: JSON.stringify(cliente)
             });
 
@@ -117,18 +117,15 @@ export default function Atualiza({params}) {
   return (
     <>
         <h1>Cadastro</h1>
-
         <div>
             <form onSubmit={handleSubmit}>
                 <div>
                     <label htmlFor="idNome">Nome</label>
                     <input type="text" name='NM_CLIENTE'id='idNome' placeholder='Digite seu Nome Completo:' value={cliente.NM_CLIENTE} onChange={handleChange}/>
                 </div>
-            
                 <div>
                     <label htmlFor="idDataNascimento">Data de Nascimento</label>
                     <input type="date" name='DT_DATA_NASCIMENTO'id='idDataNascimento' placeholder='Digite sua data de nascimento:' value={cliente.DT_DATA_NASCIMENTO} onChange={handleChange}/>
-                    
                 </div>
                 <div>
                     <label htmlFor="idCPF">CPF</label>
