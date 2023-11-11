@@ -67,7 +67,7 @@ export default function Colaborador() {
     </div>
     <div className="rodape">
     
-    <h5> olá sou o silvio Luiz, tenho 18 anos sou apaixonado por programação e estou no primeiro semestre da FIAP e quero aprender o maximo possivel </h5>
+    <h5> Olá sou o silvio Luiz, tenho 18 anos sou apaixonado por programação e estou no primeiro semestre da FIAP e quero aprender o maximo possivel </h5>
     </div>
 
 </div>
@@ -76,7 +76,7 @@ export default function Colaborador() {
 <div className="colaborador">
     <div className="cabecalho">
     <h4> Leonardo Barral </h4>
-    <h5> Aluno na fiap  rm551472   </h5>
+    <h5> Aluno na fiap  rm551472 </h5>
     <Link href="https://www.linkedin.com/in/leonardoribeirobarral/" target="_blank"> 
     
     <Image className='cardimg' src="/images/icons8-linkedin.png"
@@ -88,7 +88,7 @@ export default function Colaborador() {
     </div>
     <div className="rodape">
     
-    <h5> Sou desenvolvedor software com experiência em analise de dados </h5>
+    <h5> Olá, sou um pai de família, focado e com um sonho de me tornar desenvolvedor se Software, apaixonado por tecnologia, agilidade e estou sempre na ativa. </h5>
     </div>
     </div>
 <div className="colaborador">
