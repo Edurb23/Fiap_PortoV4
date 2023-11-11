@@ -4,7 +4,7 @@ import { useState} from 'react'
 // import { Router } from 'next/router'
 import { useRouter } from "next/navigation";
 
-export default function Cadastro({params}) {
+export default function Delete({params}) {
 
     const router = useRouter();
 
