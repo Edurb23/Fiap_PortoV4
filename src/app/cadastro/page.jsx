@@ -74,45 +74,37 @@ export default function Cadastro({params}) {
 
   return (
     <>
-    <h1>Cadastro</h1>
+        <h1>Cadastro</h1>
 
-    <div>
-        <form onSubmit={handleSubmit}>
-            <div>
-                <label htmlFor="idNome">Nome</label>
-                <input type="text" name='NM_CLIENTE'id='idNome' placeholder='Digite seu Nome Completo:' value={cliente.NM_CLIENTE} onChange={handleChange}/>
-            </div>
-           
-            <div>
-                <label htmlFor="idDataNascimento">Data de Nascimento</label>
-                <input type="date" name='DT_DATA_NASCIMENTO'id='idDataNascimento' placeholder='Digite sua data de nascimento:' value={cliente.DT_DATA_NASCIMENTO} onChange={handleChange}/>
-                
-            </div>
-            <div>
-                <label htmlFor="idCPF">CPF</label>
-                <input type="text" name='NR_CPF'id='idCPF' placeholder='Digite seu CPF:' value={cliente.NR_CPF} onChange={handleChange}/>
-            </div>
-            <div>
-                <label htmlFor="idCNH">CNH</label>
-                <input type="text" name='NR_CNH'id='idCNH' placeholder='Digite sua CNH:' value={cliente.NR_CNH} onChange={handleChange}/>
-            </div>
-            <div>
-                <label htmlFor="idRG">RG</label>
-                <input type="text" name='NR_RG'id='idRG' placeholder='Digite seu Rg:' value={cliente.NR_RG} onChange={handleChange}/>
-            </div>
-            <div>
-                <label htmlFor="idEmail">Email</label>
-                <input type="email" name='email'id='idEmail' placeholder='Digite seu email:'/>
-            </div>
-            <div>
-                <label htmlFor="id">Senha</label>
-                <input type="password" name='senha'id='idSenha' placeholder='Digite sua Senha:'/>
-            </div>
-            <div>
-                <button>Cadastrar</button>
-            </div>
-        </form>
-    </div>  
+        <div>
+            <form onSubmit={handleSubmit}>
+                <div>
+                    <label htmlFor="idNome">Nome</label>
+                    <input type="text" name='NM_CLIENTE'id='idNome' placeholder='Digite seu Nome Completo:' value={cliente.NM_CLIENTE} onChange={handleChange}/>
+                </div>
+            
+                <div>
+                    <label htmlFor="idDataNascimento">Data de Nascimento</label>
+                    <input type="date" name='DT_DATA_NASCIMENTO'id='idDataNascimento' placeholder='Digite sua data de nascimento:' value={cliente.DT_DATA_NASCIMENTO} onChange={handleChange}/>
+                    
+                </div>
+                <div>
+                    <label htmlFor="idCPF">CPF</label>
+                    <input type="text" name='NR_CPF'id='idCPF' placeholder='Digite seu CPF:' value={cliente.NR_CPF} onChange={handleChange}/>
+                </div>
+                <div>
+                    <label htmlFor="idCNH">CNH</label>
+                    <input type="text" name='NR_CNH'id='idCNH' placeholder='Digite sua CNH:' value={cliente.NR_CNH} onChange={handleChange}/>
+                </div>
+                <div>
+                    <label htmlFor="idRG">RG</label>
+                    <input type="text" name='NR_RG'id='idRG' placeholder='Digite seu Rg:' value={cliente.NR_RG} onChange={handleChange}/>
+                </div>
+                <div>
+                    <button>Cadastrar</button>
+                </div>
+            </form>
+        </div>  
     </>
   )
 }
