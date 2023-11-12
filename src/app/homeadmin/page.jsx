@@ -19,8 +19,6 @@ export default function Homeadmin() {
         "datamax": format(new Date(), 'yyyy-MM-dd')
     })
 
-    
-
     const getClientes = async () => {
         try{
             const responseget = await fetch(`http://127.0.0.1:5000/clientesearch/?datamin=${dateInterval.datamin}&datamax=${dateInterval.datamax}`,{

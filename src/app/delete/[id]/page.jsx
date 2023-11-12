@@ -88,7 +88,7 @@ export default function Delete({params}) {
 
   return (
     <>
-        <h1>Cadastro</h1>
+        <h1>Deletando Cliente</h1>
         <div>
             <form onSubmit={handleSubmit}>
                 <div>
