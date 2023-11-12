@@ -18,9 +18,6 @@ export default function Atualiza({params}) {
         "NR_RG":"",
         "ID_CLIENTE": params.id
     })
-    
-    let clienteAtual;
-
 
     useEffect(() => {
         const obterClienteAtual = async () => {
@@ -31,7 +28,7 @@ export default function Atualiza({params}) {
                         "Content-Type":"application/json"   
                     }
                 });
-                clienteAtual = await responseget.json();
+                let clienteAtual = await responseget.json();
                 console.log(clienteAtual);
                 setCliente(clienteAtual);
             }catch(error){
@@ -75,7 +72,7 @@ export default function Atualiza({params}) {
         e.preventDefault();
         try {
             const response = await fetch("http://127.0.0.1:5000/cliente_update",{
-                method:"Put",
+                method:"PUT",
                 headers:{
                     "Content-Type":"application/json"
                 },
