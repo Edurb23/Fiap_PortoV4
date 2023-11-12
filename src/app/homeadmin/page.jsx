@@ -2,6 +2,8 @@
 import React from 'react'
 import { useState, useEffect} from 'react'
 import { useRouter } from "next/navigation";
+import { format } from 'date-fns';
+
 
 // import { redirect } from "next/navigation";
 import Link from "next/link";
@@ -12,9 +14,9 @@ export default function Homeadmin() {
     const router = useRouter();
     // const [msgstatus, setMsgStatus] = useState("");
     const [clientes, setClientes] = useState([])
-    const [interval, setInterval] = useState({
-        "datamin":"1900-01-01",
-        "datamax": "2050-12-31"
+    const [dateInterval, setDateInterval] = useState({
+        "datamin":"2004-05-10",
+        datamax: format(new Date(), 'yyyy-MM-dd')
     })
 
     
@@ -23,7 +25,7 @@ export default function Homeadmin() {
     useEffect(() => {
         const getClientes = async () => {
             try{
-                const responseget = await fetch(`http://127.0.0.1:5000/clientesearch/?datamin=${interval.datamin}&datamax=${interval.datamax}`,{
+                const responseget = await fetch(`http://127.0.0.1:5000/clientesearch/?datamin=${dateInterval.datamin}&datamax=${dateInterval.datamax}`,{
                     method:"GET",
                     headers:{
                         "Content-Type":"application/json"   
@@ -38,17 +40,12 @@ export default function Homeadmin() {
             }
         };
         getClientes();
-      }, []);
+      }, [dateInterval]);
     
     const handleChange = (e)=>{
         const {name, value} = e.target;
-        setInterval({...interval,[name]:value})
+        setDateInterval({...dateInterval,[name]:value})
     }
-
-    const handleSubmit = (e)=>{
-        getClientes();
-    }
-
 
     const handleConsulta = (id)=>{
         router.push(`/consulta/${id}`)
@@ -68,11 +65,11 @@ export default function Homeadmin() {
                 <form onSubmit={handleSubmit}>
                     <div>
                         <label htmlFor="idDataMin">Data min</label>
-                        <input type="date" name='datamin'id='idDataMin' value={interval.datamin} onChange={handleChange}/>
+                        <input type="date" name='datamin'id='idDataMin' value={dateInterval.datamin} onChange={handleChange}/>
                     </div>
                     <div>
                         <label htmlFor="idDataMax">Data max</label>
-                        <input type="date" name='datamax'id='idDataMax' value={interval.datamin} onChange={handleChange}/>
+                        <input type="date" name='datamax'id='idDataMax' value={dateInterval.datamax} onChange={handleChange}/>
                     </div>
                     <button>Buscar</button>
                 </form>
