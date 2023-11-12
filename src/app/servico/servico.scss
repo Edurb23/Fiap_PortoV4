@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,900&family=Spinnaker&display=swap');
+
+.conteudo {
+    h1 {
+      color: #939BF5;
+      font-weight: 400;
+      font-size: 80px;
+      text-align: center;
+      line-height: 28px;
+      font-family: 'Roboto', sans-serif;
+      font-family: 'Spinnaker', sans-serif;
+      padding: 4%;
+    }
+  }
+
+  .texto-descritivo {
+    color: #000;
+    font-weight: 700;
+    font-size: 35px;
+    line-height: 40px;
+    text-align: center;
+    padding: 4%;
+  }
+
+  .imagemchat1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+    padding: 2% 0% 0% 33%;
+  }
