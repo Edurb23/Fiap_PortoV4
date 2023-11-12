@@ -62,7 +62,7 @@ export default function Homeadmin() {
     
             <h1>Clientes</h1>
             <div>
-                <form onSubmit={handleSubmit}>
+                <form>
                     <div>
                         <label htmlFor="idDataMin">Data min</label>
                         <input type="date" name='datamin'id='idDataMin' value={dateInterval.datamin} onChange={handleChange}/>
