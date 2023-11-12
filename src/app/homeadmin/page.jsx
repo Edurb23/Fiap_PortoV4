@@ -28,7 +28,6 @@ export default function Homeadmin() {
                 }
             });
             let clientes = await responseget.json();
-            console.log(clientes)
             setClientes(clientes);
         }catch(error){
             console.log(error);
