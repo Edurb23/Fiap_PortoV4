@@ -16,36 +16,51 @@ export default function Homeadmin() {
     const [clientes, setClientes] = useState([])
     const [dateInterval, setDateInterval] = useState({
         "datamin":"2004-05-10",
-        datamax: format(new Date(), 'yyyy-MM-dd')
+        "datamax": format(new Date(), 'yyyy-MM-dd')
     })
 
     
 
+    const getClientes = async () => {
+        try{
+            const responseget = await fetch(`http://127.0.0.1:5000/clientesearch/?datamin=${dateInterval.datamin}&datamax=${dateInterval.datamax}`,{
+                method:"GET",
+                headers:{
+                    "Content-Type":"application/json"   
+                }
+            });
+            let clientes = await responseget.json();
+            console.log(clientes)
+            setClientes(clientes);
+        }catch(error){
+            console.log(error);
+            redirect("/error");
+        }
+    };
 
     useEffect(() => {
-        const getClientes = async () => {
-            try{
-                const responseget = await fetch(`http://127.0.0.1:5000/clientesearch/?datamin=${dateInterval.datamin}&datamax=${dateInterval.datamax}`,{
-                    method:"GET",
-                    headers:{
-                        "Content-Type":"application/json"   
-                    }
-                });
-                let clientes = await responseget.json();
-                console.log(clientes)
-                setClientes(clientes);
-            }catch(error){
-                console.log(error);
-                redirect("/error");
-            }
-        };
         getClientes();
-      }, [dateInterval]);
+    }, [dateInterval]);
+
+
     
     const handleChange = (e)=>{
+        e.preventDefault();
         const {name, value} = e.target;
         setDateInterval({...dateInterval,[name]:value})
     }
+    const handleLimpar = (e)=>{
+        e.preventDefault();
+        setDateInterval(
+            {
+                datamin:"2004-05-10",
+                datamax:format(new Date(), 'yyyy-MM-dd')
+            },
+        );
+        getClientes();
+    }
+
+
 
     const handleConsulta = (id)=>{
         router.push(`/consulta/${id}`)
@@ -71,8 +86,8 @@ export default function Homeadmin() {
                         <label htmlFor="idDataMax">Data max</label>
                         <input type="date" name='datamax'id='idDataMax' value={dateInterval.datamax} onChange={handleChange}/>
                     </div>
-                    <button>Buscar</button>
                 </form>
+                <button onClick={handleLimpar}>Limpar</button>
             </div>
             <table>
                 <thead>
