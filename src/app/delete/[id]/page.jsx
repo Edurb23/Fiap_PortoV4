@@ -51,7 +51,7 @@ export default function Delete({params}) {
         setCliente({...cliente,[name]:value})
     }
 
-    const handleSubmit = async (e) => {
+    const handleClick = async (e) => {
         e.preventDefault();
         try {
             const response = await fetch(`http://127.0.0.1:5000/cliente_delete/${params.id}`,{
@@ -90,33 +90,32 @@ export default function Delete({params}) {
     <>
         <h1>Deletando Cliente</h1>
         <div>
-            <form onSubmit={handleSubmit}>
+            
                 <div>
                     <label htmlFor="idNome">Nome</label>
-                    <input type="text" name='NM_CLIENTE'id='idNome' placeholder='Digite seu Nome Completo:' value={cliente.NM_CLIENTE} onChange={handleChange}/>
+                    <span>{cliente.NM_CLIENTE}</span>
                 </div>
                 <div>
                     <label htmlFor="idDataNascimento">Data de Nascimento</label>
-                    <input type="date" name='DT_DATA_NASCIMENTO'id='idDataNascimento' placeholder='Digite sua data de nascimento:' value={cliente.DT_DATA_NASCIMENTO} onChange={handleChange}/>
+                    <span>{cliente.DT_DATA_NASCIMENTO}</span>
+                    
                 </div>
                 <div>
                     <label htmlFor="idCPF">CPF</label>
-                    <input type="text" name='NR_CPF'id='idCPF' placeholder='Digite seu CPF:' value={cliente.NR_CPF} onChange={handleChange}/>
+                    <span>{cliente.NR_CPF}</span>
                 </div>
                 <div>
                     <label htmlFor="idCNH">CNH</label>
-                    <input type="text" name='NR_CNH'id='idCNH' placeholder='Digite sua CNH:' value={cliente.NR_CNH} onChange={handleChange}/>
+                    <span>{cliente.NR_CNH}</span>
                 </div>
                 <div>
                     <label htmlFor="idRG">RG</label>
-                    <input type="text" name='NR_RG'id='idRG' placeholder='Digite seu Rg:' value={cliente.NR_RG} onChange={handleChange}/>
+                    <span>{cliente.NR_RG}</span>
                 </div>
                 <div>
-                    <button>Cadastrar</button>
-                    {/* <button onClick={handleBack}>Voltar</button> */}
                     <Link href="/homeadmin">Voltar</Link>
                 </div>
-            </form>
+                <button onClick={handleClick}>Deletar</button>
         </div>  
     </>
   )

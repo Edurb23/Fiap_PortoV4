@@ -70,7 +70,7 @@ export default function Homeadmin() {
     }
 
     return (
-        <div className="lat-prod-all">
+        <div className="clientes">
     
             <h1>Clientes</h1>
             <div>
