@@ -18,10 +18,7 @@ export default function Homeadmin() {
     })
 
     
-    const handleChange = (e)=>{
-        const {name, value} = e.target;
-        setInterval({...interval,[name]:value})
-    }
+
 
     useEffect(() => {
         const getClientes = async () => {
@@ -42,6 +39,11 @@ export default function Homeadmin() {
         };
         getClientes();
       }, []);
+    
+    const handleChange = (e)=>{
+        const {name, value} = e.target;
+        setInterval({...interval,[name]:value})
+    }
 
     const handleSubmit = (e)=>{
         getClientes();
@@ -66,11 +68,11 @@ export default function Homeadmin() {
                 <form onSubmit={handleSubmit}>
                     <div>
                         <label htmlFor="idDataMin">Data min</label>
-                        <input type="date" name='datamin'id='idDataMin' onChange={handleChange}/>
+                        <input type="date" name='datamin'id='idDataMin' value={interval.datamin} onChange={handleChange}/>
                     </div>
                     <div>
                         <label htmlFor="idDataMax">Data max</label>
-                        <input type="date" name='datamax'id='idDataMax' onChange={handleChange}/>
+                        <input type="date" name='datamax'id='idDataMax' value={interval.datamin} onChange={handleChange}/>
                     </div>
                     <button>Buscar</button>
                 </form>
