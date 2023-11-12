@@ -3,6 +3,7 @@ import React from 'react'
 import { useState, useEffect} from 'react'
 // import { Router } from 'next/router'
 import { useRouter } from "next/navigation";
+import Link from 'next/link';
 
 export default function Delete({params}) {
     console.log(params.id);
@@ -63,6 +64,10 @@ export default function Delete({params}) {
     //     if (msgstatus == "Cadastro Realizado com Sucesso!")
     // }, [msgstatus])
 
+    const handleBack = (e)=>{
+        router.push("/homeadmin")
+    }
+
     const handleChange = (e)=>{
         const {name, value} = e.target;
         setCliente({...cliente,[name]:value})
@@ -87,7 +92,7 @@ export default function Delete({params}) {
                     setMsgStatus("Cadastro Realizado com Sucesso!");
                     setTimeout(()=>{
                         setMsgStatus("");
-                        router.push("/");
+                        router.push("/homeadmin");
                     },5000);
                 }else{
                     setMsgStatus("Ocorreu um erro!");
@@ -130,6 +135,8 @@ export default function Delete({params}) {
                 </div>
                 <div>
                     <button>Cadastrar</button>
+                    {/* <button onClick={handleBack}>Voltar</button> */}
+                    <Link href="/homeadmin">Voltar</Link>
                 </div>
             </form>
         </div>  

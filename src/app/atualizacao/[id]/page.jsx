@@ -3,6 +3,7 @@ import React from 'react'
 import { useState, useEffect} from 'react'
 // import { Router } from 'next/router'
 import { useRouter } from "next/navigation";
+import Link from 'next/link';
 
 export default function Atualiza({params}) {
 
@@ -62,6 +63,10 @@ export default function Atualiza({params}) {
     // useEffect(()=>{
     //     if (msgstatus == "Cadastro Realizado com Sucesso!")
     // }, [msgstatus])
+
+    const handleBack = (e)=>{
+        router.push("/homeadmin")
+    }
 
     const handleChange = (e)=>{
         const {name, value} = e.target;
@@ -138,6 +143,8 @@ export default function Atualiza({params}) {
                 </div>
                 <div>
                     <button>Cadastrar</button>
+                    {/* <button onClick={handleBack}>Voltar</button> */}
+                    <Link href="/homeadmin">Voltar</Link>
                 </div>
             </form>
         </div>  

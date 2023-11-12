@@ -1,10 +1,9 @@
 "use client";
 import React from 'react'
 import { useState} from 'react'
-// import { Router } from 'next/router'
 import { useRouter } from "next/navigation";
-
-export default function Cadastro({params}) {
+import Link from 'next/link';
+export default function Cadastro() {
 
     const router = useRouter();
 
@@ -27,6 +26,9 @@ export default function Cadastro({params}) {
         const {name, value} = e.target;
         setCliente({...cliente,[name]:value})
     }
+    const handleBack = (e)=>{
+        router.push("/homeadmin")
+    }
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -47,7 +49,7 @@ export default function Cadastro({params}) {
                     setMsgStatus("Cadastro Realizado com Sucesso!");
                     setTimeout(()=>{
                         setMsgStatus("");
-                        router.push("/");
+                        router.push("/homeadmin");
                     },5000);
                 }else{
                     setMsgStatus("Ocorreu um erro!");
@@ -77,7 +79,7 @@ export default function Cadastro({params}) {
         <h1>Cadastro</h1>
 
         <div>
-            <form onSubmit={handleSubmit}>
+            <form  onSubmit={handleSubmit} >
                 <div>
                     <label htmlFor="idNome">Nome</label>
                     <input type="text" name='NM_CLIENTE'id='idNome' placeholder='Digite seu Nome Completo:' value={cliente.NM_CLIENTE} onChange={handleChange}/>
@@ -102,6 +104,8 @@ export default function Cadastro({params}) {
                 </div>
                 <div>
                     <button>Cadastrar</button>
+                    {/* <button onClick={handleBack}>Voltar</button> */}
+                    <Link href="/homeadmin">Voltar</Link>
                 </div>
             </form>
         </div>  
