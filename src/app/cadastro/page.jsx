@@ -78,6 +78,7 @@ export default function Cadastro() {
     <>
         <h1>Cadastro</h1>
 
+
         <div>
             <form  onSubmit={handleSubmit} >
                 <div>

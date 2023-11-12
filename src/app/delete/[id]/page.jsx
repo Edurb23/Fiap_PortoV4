@@ -42,28 +42,6 @@ export default function Delete({params}) {
 
 
 
-
-
-
-    // try{
-    //     const responseget = await fetch(`http://127.0.0.1:5000/cliente/${params.id}`,{
-    //         method:"GET",
-    //         headers:{
-    //             "Content-Type":"application/json"   
-    //         }
-    //     });
-    //     clienteAtual = await responseget.json();
-
-    //     setCliente(clienteAtual);
-    // }catch(error){
-    //     console.log(error);
-    //     redirect("/error");
-    // }
-    
-    // useEffect(()=>{
-    //     if (msgstatus == "Cadastro Realizado com Sucesso!")
-    // }, [msgstatus])
-
     const handleBack = (e)=>{
         router.push("/homeadmin")
     }

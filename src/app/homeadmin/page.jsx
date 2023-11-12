@@ -12,14 +12,21 @@ export default function Homeadmin() {
     const router = useRouter();
     // const [msgstatus, setMsgStatus] = useState("");
     const [clientes, setClientes] = useState([])
-    const [datamin, setDatamin] = useState("1900-01-01")
-    const [datamax, setDatamax] = useState("2050-12-31")
+    const [interval, setInterval] = useState({
+        "datamin":"1900-01-01",
+        "datamax": "2050-12-31"
+    })
 
+    
+    const handleChange = (e)=>{
+        const {name, value} = e.target;
+        setInterval({...interval,[name]:value})
+    }
 
     useEffect(() => {
         const getClientes = async () => {
             try{
-                const responseget = await fetch(`http://127.0.0.1:5000/clientesearch/?datamin=${datamin}&datamax=${datamax}`,{
+                const responseget = await fetch(`http://127.0.0.1:5000/clientesearch/?datamin=${interval.datamin}&datamax=${interval.datamax}`,{
                     method:"GET",
                     headers:{
                         "Content-Type":"application/json"   
@@ -36,6 +43,9 @@ export default function Homeadmin() {
         getClientes();
       }, []);
 
+    const handleSubmit = (e)=>{
+        getClientes();
+    }
 
 
     const handleConsulta = (id)=>{
@@ -48,37 +58,23 @@ export default function Homeadmin() {
         router.push(`/delete/${id}`)
     }
 
-
-    // let clientes;
-    // try{
-    //     const responseget = await fetch(`http://127.0.0.1:5000/clientesearch/?datamin=25/02/1900&datamax=31/12/2050`,{
-    //         method:"GET",
-    //         headers:{
-    //             "Content-Type":"application/json"   
-    //         }
-    //     });
-    //     clientes = await responseget.json();
-    // }catch(error){
-    //     console.log(error);
-    //     redirect("/error");
-    // }
-
-    // const corrigindoData = (dataCompleta) => {
-    //     const data = new Date(dataCompleta);
-    //     const dia = String(data.getDate()).padStart(2, '0');
-    //     const mes = String(data.getMonth() + 1).padStart(2, '0'); // Meses são indexados de 0 a 11
-    //     const ano = data.getFullYear();
-      
-    //     return `${dia}/${mes}/${ano}`;
-    //   };
-
-
-
     return (
         <div className="lat-prod-all">
     
             <h1>Clientes</h1>
-    
+            <div>
+                <form onSubmit={handleSubmit}>
+                    <div>
+                        <label htmlFor="idDataMin">Data min</label>
+                        <input type="date" name='datamin'id='idDataMin' onChange={handleChange}/>
+                    </div>
+                    <div>
+                        <label htmlFor="idDataMax">Data max</label>
+                        <input type="date" name='datamax'id='idDataMax' onChange={handleChange}/>
+                    </div>
+                    <button>Buscar</button>
+                </form>
+            </div>
             <table>
                 <thead>
                     <tr>    
