@@ -26,7 +26,7 @@ export default function Colaborador() {
     </div>
     <div className="rodape">
     
-    <h5> olá sou o Eduardo Reis Braga, Sou apaixonado por musica, esporte e tecnologia, tenho certificado da Digital House e agora estou fazendo ADS na fiap </h5>
+    <h5> olá sou o Eduardo Reis Braga, Sou apaixonado por musica, esporte e tecnologia, tenho certificado de Fullstack web da Digital House e agora estou fazendo ADS na fiap </h5>
     </div>
 
 </div>
@@ -67,7 +67,7 @@ export default function Colaborador() {
     </div>
     <div className="rodape">
     
-    <h5> Olá sou o silvio Luiz, tenho 18 anos sou apaixonado por programação e estou no primeiro semestre da FIAP e quero aprender o maximo possivel </h5>
+    <h5> Olá sou o silvio Luiz, tenho 18 anos sou apaixonado por programação e estou no segundo semestre da FIAP e quero aprender o maximo possivel </h5>
     </div>
 
 </div>

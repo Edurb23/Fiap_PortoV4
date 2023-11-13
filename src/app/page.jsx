@@ -17,9 +17,10 @@ export default function page() {
              </h1>
 
           <Image className='imgLogo' src="/images/Guincho.png"
-            width={900}
+            width={700}
             height={800}
             alt="Imagem de um guincho"
+            
           />
 
         </section>
