@@ -88,37 +88,37 @@ export default function Delete({params}) {
                 <div className='div'>
                     <label htmlFor="idNome">Nome</label>
                     <div>
-                        <span>{cliente.NM_CLIENTE}</span>
+                        <span>{cliente.nm_cliente}</span>
                     </div> 
                 </div>
                 <div className='div'>
                     <label htmlFor="idDataNascimento">Data de Nascimento</label>
                     <div>
-                        <span>{cliente.DT_DATA_NASCIMENTO}</span>
+                        <span>{cliente.dt_data_nascimento}</span>
                     </div> 
                     
                 </div>
                 <div className='div'>
                     <label htmlFor="idCPF">CPF</label>
                     <div>
-                        <span>{cliente.NR_CPF}</span>
+                        <span>{cliente.nr_cpf}</span>
                     </div> 
                 </div>
                 <div className='div'>
                     <label htmlFor="idCNH">CNH</label>
                     <div>
-                        <span>{cliente.NR_CNH}</span>
+                        <span>{cliente.nr_cnh}</span>
                     </div> 
                 </div>
                 <div className='div'>
                     <label htmlFor="idRG">RG</label>
                     <div>
-                        <span>{cliente.NR_RG}</span>
+                        <span>{cliente.nr_rg}</span>
                     </div> 
                 </div>
                 <div className='link'>
                     <Link href="/homeadmin">Voltar</Link>
-                    <button onClick={handleClick}>Deletar</button>
+                    <button className='botaoDeletar' onClick={handleClick}>Deletar</button>
                 </div>
         </div>  
     </div>
