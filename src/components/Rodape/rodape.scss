@@ -6,6 +6,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    max-width: 100%;
   
     .conteudo-1 {
       flex: 1;
@@ -45,6 +46,23 @@
           }
         }
       
+}
+
+@media screen and (max-width:1514px){ 
+  .footer{
+    max-width: 1%;
+    .conteudo-2 ul {
+      margin-top: 20px; 
+
+      .portologo {
+        max-width: 80px; 
+      }
+      .socialicons {
+        max-width: 30px; 
+      }
+  
+    }
+  }
 }
 
 }
