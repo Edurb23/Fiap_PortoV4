@@ -4,6 +4,7 @@ import { useState, useEffect} from 'react'
 // import { Router } from 'next/router'
 import { useRouter } from "next/navigation";
 import Link from 'next/link';
+import './delete.scss'
 
 export default function Delete({params}) {
     console.log(params.id);
@@ -87,37 +88,47 @@ export default function Delete({params}) {
 
 
   return (
-    <>
+    <div className='dadosclientes'>
         <h1>Deletando Cliente</h1>
-        <div>
+        <div className='table'>
             
-                <div>
+                <div className='div'>
                     <label htmlFor="idNome">Nome</label>
-                    <span>{cliente.NM_CLIENTE}</span>
+                    <div>
+                        <span>{cliente.NM_CLIENTE}</span>
+                    </div> 
                 </div>
-                <div>
+                <div className='div'>
                     <label htmlFor="idDataNascimento">Data de Nascimento</label>
-                    <span>{cliente.DT_DATA_NASCIMENTO}</span>
+                    <div>
+                        <span>{cliente.DT_DATA_NASCIMENTO}</span>
+                    </div> 
                     
                 </div>
-                <div>
+                <div className='div'>
                     <label htmlFor="idCPF">CPF</label>
-                    <span>{cliente.NR_CPF}</span>
+                    <div>
+                        <span>{cliente.NR_CPF}</span>
+                    </div> 
                 </div>
-                <div>
+                <div className='div'>
                     <label htmlFor="idCNH">CNH</label>
-                    <span>{cliente.NR_CNH}</span>
+                    <div>
+                        <span>{cliente.NR_CNH}</span>
+                    </div> 
                 </div>
-                <div>
+                <div className='div'>
                     <label htmlFor="idRG">RG</label>
-                    <span>{cliente.NR_RG}</span>
+                    <div>
+                        <span>{cliente.NR_RG}</span>
+                    </div> 
                 </div>
-                <div>
+                <div className='link'>
                     <Link href="/homeadmin">Voltar</Link>
+                    <button onClick={handleClick}>Deletar</button>
                 </div>
-                <button onClick={handleClick}>Deletar</button>
         </div>  
-    </>
+    </div>
   )
 }
 
