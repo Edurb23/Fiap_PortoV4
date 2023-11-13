@@ -189,6 +189,10 @@ div{
       font-size: 22px;
       text-align: center;
       margin-left: 45%;
+
+      @media screen and (max-width: 768px){
+        margin-left: 35%;
+      }
     }
     p {
       text-align: center;
@@ -197,6 +201,9 @@ div{
       line-height: 24px;
       padding: 2%;
       margin-left: 5%;
+      @media screen and (max-width: 768px){
+        margin-left: 35%;
+      }
     }
 
   }
@@ -216,6 +223,9 @@ div{
       margin-left: 15%;
       margin-top: 3%;
        box-shadow: grey 5px 5px 5px 5px;
+       @media screen and (max-width: 768px){
+        width: 760px;
+      }
     }
     h1 {
       font-size: 38px;
