@@ -4,6 +4,7 @@ import { useState, useEffect} from 'react'
 // import { Router } from 'next/router'
 import { useRouter } from "next/navigation";
 import Link from 'next/link';
+import './consulta.scss'
 
 export default function Consulta({params}) {
     console.log(params.id);
@@ -39,30 +40,6 @@ export default function Consulta({params}) {
         };
         obterClienteAtual();
       }, [params.id]);
-
-
-
-
-
-
-    // try{
-    //     const responseget = await fetch(`http://127.0.0.1:5000/cliente/${params.id}`,{
-    //         method:"GET",
-    //         headers:{
-    //             "Content-Type":"application/json"   
-    //         }
-    //     });
-    //     clienteAtual = await responseget.json();
-
-    //     setCliente(clienteAtual);
-    // }catch(error){
-    //     console.log(error);
-    //     redirect("/error");
-    // }
-    
-    // useEffect(()=>{
-    //     if (msgstatus == "Cadastro Realizado com Sucesso!")
-    // }, [msgstatus])
 
     const handleBack = (e)=>{
         router.push("/homeadmin")
@@ -117,35 +94,44 @@ export default function Consulta({params}) {
 
 
   return (
-    <>
+    <div className='dadosclientes'>
         <h1>Dados do Cliente</h1>
-        <div>
-            
-                <div>
+        <div className='table'>
+                <div className='div'>
                     <label htmlFor="idNome">Nome</label>
-                    <span>{cliente.NM_CLIENTE}</span>
+                    <div>
+                        <span>{cliente.NM_CLIENTE}</span>
+                    </div>
                 </div>
-                <div>
+                <div className='div'>
                     <label htmlFor="idDataNascimento">Data de Nascimento</label>
-                    <span>{cliente.DT_DATA_NASCIMENTO}</span>
+                    <div>
+                        <span>{cliente.DT_DATA_NASCIMENTO}</span>
+                    </div>
                     
                 </div>
-                <div>
+                <div className='div'>
                     <label htmlFor="idCPF">CPF</label>
-                    <span>{cliente.NR_CPF}</span>
+                    <div>
+                        <span>{cliente.NR_CPF}</span>
+                    </div>
                 </div>
-                <div>
+                <div className='div'>
                     <label htmlFor="idCNH">CNH</label>
-                    <span>{cliente.NR_CNH}</span>
+                    <div>
+                        <span>{cliente.NR_CNH}</span>
+                    </div>
                 </div>
-                <div>
+                <div className='div'>
                     <label htmlFor="idRG">RG</label>
-                    <span>{cliente.NR_RG}</span>
-                </div>
-                <div>
-                    <Link href="/homeadmin">Voltar</Link>
+                    <div>
+                        <span>{cliente.NR_RG}</span>
+                    </div>
                 </div>
         </div>  
-    </>
+        <div className='link'>
+            <Link href="/homeadmin">Voltar</Link>
+        </div>
+    </div>
   )
 }
