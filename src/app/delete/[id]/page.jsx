@@ -7,7 +7,7 @@ import Link from 'next/link';
 import './delete.scss'
 
 export default function Delete({params}) {
-    console.log(params.id);
+
     const router = useRouter();
 
     const [msgstatus, setMsgStatus] = useState("");
@@ -41,16 +41,10 @@ export default function Delete({params}) {
         obterClienteAtual();
       }, [params.id]);
 
-
-
-    const handleBack = (e)=>{
-        router.push("/homeadmin")
-    }
-
-    const handleChange = (e)=>{
-        const {name, value} = e.target;
-        setCliente({...cliente,[name]:value})
-    }
+    useEffect(()=>{
+        if (msgstatus)
+            alert(msgstatus)
+    }, [msgstatus])
 
     const handleClick = async (e) => {
         e.preventDefault();
@@ -63,22 +57,21 @@ export default function Delete({params}) {
                 
                 body: JSON.stringify(cliente)
             });
+            
 
-            if(response.ok){
-                const clients = await response.json();
 
-                if(clients){
-                    setMsgStatus("Cadastro Realizado com Sucesso!");
-                    setTimeout(()=>{
-                        setMsgStatus("");
-                        router.push("/homeadmin");
-                    },5000);
-                }else{
-                    setMsgStatus("Ocorreu um erro!");
-                    setTimeout(()=>{
-                        setMsgStatus("");
-                    },5000);
-                }
+            if(response.status == 204){
+                setMsgStatus("Excluído com Sucesso!");
+                setTimeout(()=>{
+                    setMsgStatus("");
+                    router.push("/homeadmin");
+                },5000);
+
+            }else{
+                setMsgStatus("Ocorreu um erro!");
+                setTimeout(()=>{
+                    setMsgStatus("");
+                },5000);
             }
         }catch (error) {
         }

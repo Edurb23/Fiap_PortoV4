@@ -102,7 +102,7 @@ export default function Homeadmin() {
                             <td className='demais'>{cliente.NM_CLIENTE}</td>
                             <td className='demais'>{cliente.DT_CADASTRO}</td>
                             <td className='opcoes'>
-                                <button className='primeiro' onClick={()=>handleConsulta(cliente.ID_CLIENTE)}>Consultra</button>
+                                <button className='primeiro' onClick={()=>handleConsulta(cliente.ID_CLIENTE)}>Consultar</button>
                                 <button onClick={()=>handleAtualizacao(cliente.ID_CLIENTE)}>Editar</button>
                                 <button onClick={()=>handleDelete(cliente.ID_CLIENTE)}>Excluir</button>
                             </td>
