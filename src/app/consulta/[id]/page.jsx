@@ -7,7 +7,7 @@ import Link from 'next/link';
 import './consulta.scss'
 
 export default function Consulta({params}) {
-    console.log(params.id);
+
     const router = useRouter();
 
     const [msgstatus, setMsgStatus] = useState("");

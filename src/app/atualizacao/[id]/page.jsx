@@ -21,6 +21,12 @@ export default function Atualiza({params}) {
         "ID_CLIENTE": params.id
     })
 
+
+    useEffect(()=>{
+        if (msgstatus)
+            alert(msgstatus)
+    }, [msgstatus])
+
     useEffect(() => {
         const obterClienteAtual = async () => {
             try{
@@ -31,7 +37,6 @@ export default function Atualiza({params}) {
                     }
                 });
                 let clienteAtual = await responseget.json();
-                console.log(clienteAtual);
                 setCliente(clienteAtual);
             }catch(error){
                 console.log(error);
@@ -41,9 +46,6 @@ export default function Atualiza({params}) {
         obterClienteAtual();
       }, [params.id]);
 
-    const handleBack = (e)=>{
-        router.push("/homeadmin")
-    }
 
     const handleChange = (e)=>{
         const {name, value} = e.target;
@@ -66,7 +68,7 @@ export default function Atualiza({params}) {
                 const clients = await response.json();
 
                 if(clients){
-                    setMsgStatus("Cadastro Realizado com Sucesso!");
+                    setMsgStatus("Atualizado com Sucesso!");
                     setTimeout(()=>{
                         setMsgStatus("");
                         router.push("/homeadmin");

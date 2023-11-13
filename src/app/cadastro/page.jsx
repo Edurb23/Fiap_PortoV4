@@ -1,6 +1,6 @@
 "use client";
 import React from 'react'
-import { useState} from 'react'
+import { useState, useEffect} from 'react'
 import { useRouter } from "next/navigation";
 import Link from 'next/link';
 import './cadastro.scss'
@@ -20,17 +20,16 @@ export default function Cadastro() {
     })
     
     
-    // useEffect(()=>{
-    //     if (msgstatus == "Cadastro Realizado com Sucesso!")
-    // }, [msgstatus])
+    useEffect(()=>{
+        if (msgstatus)
+            alert(msgstatus)
+    }, [msgstatus])
 
     const handleChange = (e)=>{
         const {name, value} = e.target;
         setCliente({...cliente,[name]:value})
     }
-    const handleBack = (e)=>{
-        router.push("/homeadmin")
-    }
+
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -70,13 +69,7 @@ export default function Cadastro() {
         }catch (error) {
         }
     } 
-
-
-
-
-
-
-  return (
+    return (
         <div className='dadosclientes'>
         <h1>Cadastro</h1>
         <form  onSubmit={handleSubmit} className='table'>
