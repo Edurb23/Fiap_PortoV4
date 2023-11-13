@@ -13,12 +13,12 @@ export default function Atualiza({params}) {
     const [msgstatus, setMsgStatus] = useState("");
 
     const [cliente, setCliente] = useState({
-        "NM_CLIENTE":"",
-        "DT_DATA_NASCIMENTO":"",
-        "NR_CNH":"",
-        "NR_CPF":"",
-        "NR_RG":"",
-        "ID_CLIENTE": params.id
+        "nm_cliente":"",
+        "dt_data_nascimento":"",
+        "nr_cnh":"",
+        "nr_cpf":"",
+        "nr_rg":"",
+        "id_cliente": params.id
     })
 
 
@@ -78,12 +78,12 @@ export default function Atualiza({params}) {
                     setTimeout(()=>{
                         setMsgStatus("");
                         setCliente({
-                            "NM_CLIENTE":"",
-                            "DT_DATA_NASCIMENTO":"",
-                            "NR_CNH":"",
-                            "NR_CPF":"",
-                            "NR_RG":"",
-                            "ID_CLIENTE": params.id
+                            "nm_cliente":"",
+                            "dt_data_nascimento":"",
+                            "nr_cnh":"",
+                            "nr_cpf":"",
+                            "nr_rg":"",
+                            "id_cliente": params.id
                         });
                     },5000);
                 }

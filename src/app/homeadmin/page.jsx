@@ -100,14 +100,14 @@ export default function Homeadmin() {
                 </thead>
                 <tbody>
                     {clientes.map((cliente) => (
-                        <tr key={cliente.ID_CLIENTE} >
-                            <td className='id'>{cliente.ID_CLIENTE}</td>
-                            <td className='demais'>{cliente.NM_CLIENTE}</td>
-                            <td className='demais'>{cliente.DT_CADASTRO}</td>
+                        <tr key={cliente.id_cliente} >
+                            <td className='id'>{cliente.id_cliente}</td>
+                            <td className='demais'>{cliente.nm_cliente}</td>
+                            <td className='demais'>{cliente.dt_cadastro}</td>
                             <td className='opcoes'>
-                                <button className='primeiro' onClick={()=>handleConsulta(cliente.ID_CLIENTE)}>Consultar</button>
-                                <button onClick={()=>handleAtualizacao(cliente.ID_CLIENTE)}>Editar</button>
-                                <button onClick={()=>handleDelete(cliente.ID_CLIENTE)}>Excluir</button>
+                                <button className='primeiro' onClick={()=>handleConsulta(cliente.id_cliente)}>Consultar</button>
+                                <button onClick={()=>handleAtualizacao(cliente.id_cliente)}>Editar</button>
+                                <button onClick={()=>handleDelete(cliente.id_cliente)}>Excluir</button>
                             </td>
                         </tr>
                     ))}

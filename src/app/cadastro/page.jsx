@@ -12,11 +12,11 @@ export default function Cadastro() {
     const [msgstatus, setMsgStatus] = useState("");
 
     const [cliente, setCliente] = useState({
-        "NM_CLIENTE":"",
-        "DT_DATA_NASCIMENTO":"",
-        "NR_CNH":"",
-        "NR_CPF":"",
-        "NR_RG":""
+        "nm_cliente":"",
+        "dt_data_nascimento":"",
+        "nr_cnh":"",
+        "nr_cpf":"",
+        "nr_rg":""
     })
     
     
@@ -57,9 +57,9 @@ export default function Cadastro() {
                     setTimeout(()=>{
                         setMsgStatus("");
                         setCliente({
-                            "NM_CLIENTE":"",
-                            "DT_DATA_NASCIMENTO":"",
-                            "NR_CNH":"",
+                            "nm_cliente":"",
+                            "dt_data_nascimento":"",
+                            "nr_cnh":"",
                             "NR_CPF":"",
                             "NR_RG":""
                         });

@@ -13,18 +13,18 @@ export default function Consulta({params}) {
     const [msgstatus, setMsgStatus] = useState("");
 
     const [cliente, setCliente] = useState({
-        "NM_CLIENTE":"",
-        "DT_DATA_NASCIMENTO":"",
-        "NR_CNH":"",
-        "NR_CPF":"",
-        "NR_RG":"",
-        "ID_CLIENTE": params.id
+        "nm_cliente":"",
+        "dt_data_nascimento":"",
+        "nr_cnh":"",
+        "nr_cpf":"",
+        "nr_rg":"",
+        "id_cliente": params.id
     })
 
     useEffect(() => {
         const obterClienteAtual = async () => {
             try{
-                const responseget = await fetch(`http://127.0.0.1:5000/cliente/${params.id}`,{
+                const responseget = await fetch(`http://localhost:8080/api/cliente/${params.id}`,{
                     method:"GET",
                     headers:{
                         "Content-Type":"application/json"   
@@ -76,12 +76,12 @@ export default function Consulta({params}) {
                     setTimeout(()=>{
                         setMsgStatus("");
                         setCliente({
-                            "NM_CLIENTE":"",
-                            "DT_DATA_NASCIMENTO":"",
-                            "NR_CNH":"",
-                            "NR_CPF":"",
-                            "NR_RG":"",
-                            "ID_CLIENTE": params.id
+                            "nm_cliente":"",
+                            "dt_data_nascimento":"",
+                            "nr_cnh":"",
+                            "nr_cpf":"",
+                            "nr_rg":"",
+                            "id_cliente": params.id
                         });
                     },5000);
                 }
@@ -100,32 +100,32 @@ export default function Consulta({params}) {
                 <div className='div'>
                     <label htmlFor="idNome">Nome</label>
                     <div>
-                        <span>{cliente.NM_CLIENTE}</span>
+                        <span>{cliente.nm_cliente}</span>
                     </div>
                 </div>
                 <div className='div'>
                     <label htmlFor="idDataNascimento">Data de Nascimento</label>
                     <div>
-                        <span>{cliente.DT_DATA_NASCIMENTO}</span>
+                        <span>{cliente.dt_data_nascimento}</span>
                     </div>
                     
                 </div>
                 <div className='div'>
                     <label htmlFor="idCPF">CPF</label>
                     <div>
-                        <span>{cliente.NR_CPF}</span>
+                        <span>{cliente.nr_cpf}</span>
                     </div>
                 </div>
                 <div className='div'>
                     <label htmlFor="idCNH">CNH</label>
                     <div>
-                        <span>{cliente.NR_CNH}</span>
+                        <span>{cliente.nr_cnh}</span>
                     </div>
                 </div>
                 <div className='div'>
                     <label htmlFor="idRG">RG</label>
                     <div>
-                        <span>{cliente.NR_RG}</span>
+                        <span>{cliente.nr_rg}</span>
                     </div>
                 </div>
         </div>  
