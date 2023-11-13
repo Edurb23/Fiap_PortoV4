@@ -1,6 +1,6 @@
 import Cabecalho from "@/components/Cabecalho/cabecalho"
 import Rodape from "@/components/Rodape/rodape"
-
+import './global.css'
 import { Inter } from 'next/font/google'
 
 

@@ -1,0 +1,148 @@
+.clientes{
+    position: relative;
+    min-width: 300px;
+    box-sizing: border-box;
+    width: 80%;
+    margin: 0 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h1{
+        text-align: center;
+        width: 100%;
+        margin: 0 0 2% 0;
+        padding: 1%;
+        display: block;
+        background-color: rgb(174, 152, 152);
+        box-sizing: border-box;
+    }
+
+    .filtro{
+        position: relative;
+        width: 100%;
+        display: flex;
+        padding: 1% 0;
+        box-sizing: border-box;
+        margin: 0 0 2% 0;
+        form{
+            width: 70%;
+            display: inline;
+            div{
+                width: 40%;
+                display: inline;
+                label{
+                    margin: 0 5% 0 0;
+                }
+                input{
+                    margin: 0 5% 0 0;
+                }
+            }
+        }
+        button{
+            width: 30%;
+        }
+    }
+
+    table{
+        position: relative;
+        width: 100%;
+        box-sizing: border-box;
+        display: table;
+        border-collapse: collapse;
+        thead{
+            background-color: gray;
+            color: #ffffff;
+            position: relative;
+            width: 100%;
+            box-sizing: border-box;
+            height: 2rem;
+            tr{
+                .id{
+                    width: calc(15%);
+                    text-align:center;
+                }
+                .demais{
+                    width: calc(85%/3);
+                    text-align:left;
+                }
+                .opcoes{
+                    width: calc(85%/3);
+                    text-align:center;
+                }
+            }
+        }
+
+        
+        tbody{
+            background-color: grayscale($color: #a59a9a);
+            position: relative;
+            width: 100%;
+            box-sizing: border-box;
+            border-collapse: collapse;
+            tr{
+                position: relative;
+                .id{
+                    position: relative;
+                    width: calc(15%);
+                    text-align:center;
+                }
+                .demais{
+                    position: relative;
+                    width: calc(85%/3);
+                    text-align:left;
+                }
+                .opcoes{
+                    position: relative;
+                    width: calc(85%/3);
+                    text-align:center;
+
+                    button{
+                        background-color: #545050;
+                        width: 30%;
+                        color: antiquewhite;
+                        border: none;
+                        margin: 0 0 0 2%;
+
+                        &:hover{
+                            cursor: pointer;
+                        }
+                    }
+
+
+                }
+            }
+        }
+        tfoot{
+            background-color: gray;
+            color: #ffffff;
+            height: 2rem;
+            text-align: center;
+            tr{
+                .link{
+                    display: flex;
+                    height: 2rem;
+                    position: relative;
+                    align-items: center;
+                    justify-content: center;
+                    div{
+
+                        background-color: #545050;
+                        box-sizing: border-box;
+                        width: 80%;
+                        position:relative;
+                        a{
+                            color: antiquewhite;
+                            text-decoration: none;
+                            width: 50%;
+                        }
+                        
+                    }
+
+                }
+                
+
+            }
+        }
+    }
+}

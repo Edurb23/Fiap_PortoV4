@@ -3,7 +3,7 @@ import React from 'react'
 import { useState, useEffect} from 'react'
 import { useRouter } from "next/navigation";
 import { format } from 'date-fns';
-
+import './homeadmin.scss'
 
 // import { redirect } from "next/navigation";
 import Link from "next/link";
@@ -70,10 +70,10 @@ export default function Homeadmin() {
     }
 
     return (
-        <div className="lat-prod-all">
+        <div className="clientes">
     
             <h1>Clientes</h1>
-            <div>
+            <div className="filtro">
                 <form>
                     <div>
                         <label htmlFor="idDataMin">Data min</label>
@@ -89,20 +89,20 @@ export default function Homeadmin() {
             <table>
                 <thead>
                     <tr>    
-                        <th>Codigo</th>
-                        <th>Nome</th>
-                        <th>Data do Cadastro</th>
-                        <th>Opções</th>
+                        <th className='id'>Codigo</th>
+                        <th className='demais'>Nome</th>
+                        <th className='demais'>Data do Cadastro</th>
+                        <th className='opcoes'>Opções</th>
                     </tr>
                 </thead>
                 <tbody>
                     {clientes.map((cliente) => (
-                        <tr key={cliente.ID_CLIENTE}>
-                            <td>{cliente.ID_CLIENTE}</td>
-                            <td>{cliente.NM_CLIENTE}</td>
-                            <td>{cliente.DT_CADASTRO}</td>
-                            <td>
-                                <button onClick={()=>handleConsulta(cliente.ID_CLIENTE)}>Consultra</button>
+                        <tr key={cliente.ID_CLIENTE} >
+                            <td className='id'>{cliente.ID_CLIENTE}</td>
+                            <td className='demais'>{cliente.NM_CLIENTE}</td>
+                            <td className='demais'>{cliente.DT_CADASTRO}</td>
+                            <td className='opcoes'>
+                                <button className='primeiro' onClick={()=>handleConsulta(cliente.ID_CLIENTE)}>Consultra</button>
                                 <button onClick={()=>handleAtualizacao(cliente.ID_CLIENTE)}>Editar</button>
                                 <button onClick={()=>handleDelete(cliente.ID_CLIENTE)}>Excluir</button>
                             </td>
@@ -112,9 +112,11 @@ export default function Homeadmin() {
                 <tfoot>
                     <tr>
                         <td colSpan="3">Total de Clientes: {clientes.length}</td>
-                    </tr>
-                    <tr>
-                        <Link href="/cadastro">Novo</Link>
+                        <td className='link'>
+                            <div>
+                                <Link href="/cadastro">Novo</Link>
+                            </div>
+                        </td>
                     </tr>
                 </tfoot>
             </table>

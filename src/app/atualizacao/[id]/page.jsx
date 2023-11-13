@@ -40,30 +40,6 @@ export default function Atualiza({params}) {
         obterClienteAtual();
       }, [params.id]);
 
-
-
-
-
-
-    // try{
-    //     const responseget = await fetch(`http://127.0.0.1:5000/cliente/${params.id}`,{
-    //         method:"GET",
-    //         headers:{
-    //             "Content-Type":"application/json"   
-    //         }
-    //     });
-    //     clienteAtual = await responseget.json();
-
-    //     setCliente(clienteAtual);
-    // }catch(error){
-    //     console.log(error);
-    //     redirect("/error");
-    // }
-    
-    // useEffect(()=>{
-    //     if (msgstatus == "Cadastro Realizado com Sucesso!")
-    // }, [msgstatus])
-
     const handleBack = (e)=>{
         router.push("/homeadmin")
     }
@@ -118,7 +94,7 @@ export default function Atualiza({params}) {
 
   return (
     <>
-        <h1>Cadastro</h1>
+        <h1>Atualizar dados do Cliente</h1>
         <div>
             <form onSubmit={handleSubmit}>
                 <div>
@@ -142,9 +118,8 @@ export default function Atualiza({params}) {
                     <input type="text" name='NR_RG'id='idRG' placeholder='Digite seu Rg:' value={cliente.NR_RG} onChange={handleChange}/>
                 </div>
                 <div>
-                    <button>Cadastrar</button>
-                    {/* <button onClick={handleBack}>Voltar</button> */}
                     <Link href="/homeadmin">Voltar</Link>
+                    <button>Atualizar</button>
                 </div>
             </form>
         </div>  
