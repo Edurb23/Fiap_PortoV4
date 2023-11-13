@@ -4,6 +4,7 @@ import { useState, useEffect} from 'react'
 // import { Router } from 'next/router'
 import { useRouter } from "next/navigation";
 import Link from 'next/link';
+import './atualizacao.scss'
 
 export default function Atualiza({params}) {
 
@@ -68,7 +69,7 @@ export default function Atualiza({params}) {
                     setMsgStatus("Cadastro Realizado com Sucesso!");
                     setTimeout(()=>{
                         setMsgStatus("");
-                        router.push("/");
+                        router.push("/homeadmin");
                     },5000);
                 }else{
                     setMsgStatus("Ocorreu um erro!");
@@ -93,36 +94,36 @@ export default function Atualiza({params}) {
 
 
   return (
-    <>
+    <div className='dadosclientes'>
         <h1>Atualizar dados do Cliente</h1>
-        <div>
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <label htmlFor="idNome">Nome</label>
-                    <input type="text" name='NM_CLIENTE'id='idNome' placeholder='Digite seu Nome Completo:' value={cliente.NM_CLIENTE} onChange={handleChange}/>
-                </div>
-                <div>
-                    <label htmlFor="idDataNascimento">Data de Nascimento</label>
-                    <input type="date" name='DT_DATA_NASCIMENTO'id='idDataNascimento' placeholder='Digite sua data de nascimento:' value={cliente.DT_DATA_NASCIMENTO} onChange={handleChange}/>
-                </div>
-                <div>
-                    <label htmlFor="idCPF">CPF</label>
-                    <input type="text" name='NR_CPF'id='idCPF' placeholder='Digite seu CPF:' value={cliente.NR_CPF} onChange={handleChange}/>
-                </div>
-                <div>
-                    <label htmlFor="idCNH">CNH</label>
-                    <input type="text" name='NR_CNH'id='idCNH' placeholder='Digite sua CNH:' value={cliente.NR_CNH} onChange={handleChange}/>
-                </div>
-                <div>
-                    <label htmlFor="idRG">RG</label>
-                    <input type="text" name='NR_RG'id='idRG' placeholder='Digite seu Rg:' value={cliente.NR_RG} onChange={handleChange}/>
-                </div>
-                <div>
-                    <Link href="/homeadmin">Voltar</Link>
-                    <button>Atualizar</button>
-                </div>
-            </form>
-        </div>  
-    </>
+        
+        <form onSubmit={handleSubmit} className='table'>
+            <div className='div'>
+                <label htmlFor="idNome">Nome</label>
+                <input type="text" name='NM_CLIENTE'id='idNome' placeholder='Digite seu Nome Completo:' value={cliente.NM_CLIENTE} onChange={handleChange}/>
+            </div>
+            <div className='div'>
+                <label htmlFor="idDataNascimento">Data de Nascimento</label>
+                <input type="date" name='DT_DATA_NASCIMENTO'id='idDataNascimento' placeholder='Digite sua data de nascimento:' value={cliente.DT_DATA_NASCIMENTO} onChange={handleChange}/>
+            </div>
+            <div className='div'>
+                <label htmlFor="idCPF">CPF</label>
+                <input type="text" name='NR_CPF'id='idCPF' placeholder='Digite seu CPF:' value={cliente.NR_CPF} onChange={handleChange}/>
+            </div>
+            <div className='div'>
+                <label htmlFor="idCNH">CNH</label>
+                <input type="text" name='NR_CNH'id='idCNH' placeholder='Digite sua CNH:' value={cliente.NR_CNH} onChange={handleChange}/>
+            </div>
+            <div className='div'>
+                <label htmlFor="idRG">RG</label>
+                <input type="text" name='NR_RG'id='idRG' placeholder='Digite seu Rg:' value={cliente.NR_RG} onChange={handleChange}/>
+            </div>
+            <div className='link'>
+                <Link href="/homeadmin">Voltar</Link>
+                <button>Atualizar</button>
+            </div>
+        </form>
+        
+    </div>
   )
 }
