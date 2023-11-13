@@ -74,7 +74,10 @@ export default function Homeadmin() {
     
             <h1>Clientes</h1>
             <div className="filtro">
+                   
                 <form>
+                        
+                    
                     <div>
                         <label htmlFor="idDataMin">Data min</label>
                         <input type="date" name='datamin'id='idDataMin' value={dateInterval.datamin} onChange={handleChange}/>
@@ -113,14 +116,14 @@ export default function Homeadmin() {
                     <tr>
                         <td colSpan="3">Total de Clientes: {clientes.length}</td>
                         <td className='link'>
-                            <div>
-                                <Link href="/cadastro">Novo</Link>
-                            </div>
+                            
+                                <Link href="/cadastro" className='novo'>Novo</Link>
+                           
                         </td>
                     </tr>
                 </tfoot>
             </table>
-    
+           
         </div>
     )
 }
