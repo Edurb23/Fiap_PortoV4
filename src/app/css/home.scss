@@ -8,14 +8,15 @@ div{
       .imgLogo{
         display: flex;
         justify-content: center;
-      
+        
+       
         
       }
     
       h1 {
         display: block;
         width: 531px;
-        height: 185px;
+        height: 685px;
         font-size: 40px;
         padding: 5%;
         margin-top: 5%;
@@ -43,6 +44,17 @@ div{
           }
         }
       }
+
+      @media screen and (max-width: 768px){
+          .inicio{
+
+            .imgLogo{
+             display: none;
+            }
+          }
+      
+         }
+
       
     }
 
