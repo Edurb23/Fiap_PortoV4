@@ -48,21 +48,14 @@
       
 }
 
-@media screen and (max-width:1514px){ 
-  .footer{
-    max-width: 1%;
-    .conteudo-2 ul {
-      margin-top: 20px; 
 
-      .portologo {
-        max-width: 80px; 
-      }
-      .socialicons {
-        max-width: 30px; 
-      }
+@media screen and (max-width:1514px){ 
   
-    }
-  }
+    flex-direction: column; 
+    text-align: center; 
+    max-width: 100;
+    
+  
 }
 
 }
