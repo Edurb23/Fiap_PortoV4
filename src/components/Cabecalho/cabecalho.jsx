@@ -26,9 +26,7 @@ export default function Cabecalho() {
                     <li>
                         <Link href="/integrantes" className='a'>Integrantes</Link>
                     </li>
-                    <li>
-                        <Link href="/login" className='a'>Login</Link>
-                    </li>
+                   
                     <li>
                         <Link href="/homeadmin" className='a'>Clientes</Link>
                     </li>
