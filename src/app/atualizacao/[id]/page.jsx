@@ -30,7 +30,7 @@ export default function Atualiza({params}) {
     useEffect(() => {
         const obterClienteAtual = async () => {
             try{
-                const responseget = await fetch(`http://127.0.0.1:5000/cliente/${params.id}`,{
+                const responseget = await fetch(`http://localhost:8080/api/cliente/${params.id}`,{
                     method:"GET",
                     headers:{
                         "Content-Type":"application/json"   
