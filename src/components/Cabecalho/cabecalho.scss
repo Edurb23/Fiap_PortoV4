@@ -9,7 +9,7 @@
         display: flex;
          
          align-items: center;
-         width: 70%;
+         width: 60%;
          height: 100%;
         
         
@@ -32,7 +32,7 @@
                     
                     text-decoration: none;
                     font-weight: bold;
-                    font-size: 40px;
+                    font-size: 30px;
                     padding: 4%;
                     font-family: 'Roboto', sans-serif;
                     font-family: 'Spinnaker', sans-serif;
@@ -58,8 +58,24 @@
        
     }
 
+    @media screen and (max-width:1514px){ 
+        .logo{
+            height: 150px;
+        }
+        nav{
+            ul{
+                li{
+                    a{
+                        font-size: 20px;
+                        margin-right: 30px;
+                    }
+                }
+            }
+        }
+    }
+            
     
-}
+  
 
-
-
+       
+        }

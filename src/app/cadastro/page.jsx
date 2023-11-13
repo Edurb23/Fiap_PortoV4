@@ -96,8 +96,8 @@ export default function Cadastro() {
                 <input type="text" name='NR_RG'id='idRG' placeholder='Digite seu Rg:' value={cliente.NR_RG} onChange={handleChange}/>
             </div>
             <div className='link'>
-                <Link href="/homeadmin">Voltar</Link>
-                <button>Cadastrar</button>
+                <Link href="/homeadmin" className='link'>Voltar</Link>
+                <Link href="/homeadmin" className='link'>Cadastrar</Link>
             </div>
         </form>
     </div>  
