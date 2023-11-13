@@ -122,7 +122,7 @@ export default function Atualiza({params}) {
             </div>
             <div className='link'>
                 <Link href="/homeadmin">Voltar</Link>
-                <button>Atualizar</button>
+                <button className='botaoEditar'>Atualizar</button>
             </div>
         </form>
         

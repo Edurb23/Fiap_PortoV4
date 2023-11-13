@@ -59,7 +59,7 @@ export default function Cadastro() {
                         setCliente({
                             "nm_cliente":"",
                             "dt_data_nascimento":"",
-                            "nr_cnh":"",
+                            "NR_CNH":"",
                             "NR_CPF":"",
                             "NR_RG":""
                         });
@@ -75,7 +75,7 @@ export default function Cadastro() {
         <form  onSubmit={handleSubmit} className='table'>
             <div className='div'>
                 <label htmlFor="idNome">Nome</label>
-                <input type="text" name='NM_CLIENTE'id='idNome' placeholder='Digite seu Nome Completo:' value={cliente.NM_CLIENTE} onChange={handleChange}/>
+                <input type="text" name='NM_CLIENTE'id='idNome' placeholder='Digite seu Nome Completo:' value={cliente.nm_cliente} onChange={handleChange}/>
             </div>
         
             <div className='div'>
