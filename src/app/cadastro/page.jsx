@@ -99,7 +99,7 @@ export default function Cadastro() {
             </div>
             <div className='link'>
                 <Link href="/homeadmin" className='link'>Voltar</Link>
-                <button>Cadastrar</button>
+                <Link href="/homeadmin" className='link'><button>Cadastrar</button></Link>
             </div>
         </form>
     </div>  
