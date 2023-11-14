@@ -12,11 +12,11 @@ export default function Cadastro() {
     const [msgstatus, setMsgStatus] = useState("");
 
     const [cliente, setCliente] = useState({
-        "NM_CLIENTE":"",
-        "DT_DATA_NASCIMENTO":"",
-        "NR_CNH":"",
-        "NR_CPF":"",
-        "NR_RG":""
+        "nm_cliente":"",
+        "dt_data_nascimento":"",
+        "nr_cnh":"",
+        "nr_cpf":"",
+        "nr_rg":""
     })
     
     
@@ -34,11 +34,11 @@ export default function Cadastro() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
+            // const response = await fetch("http://localhost:8080/api/cliente",{
             const response = await fetch("http://127.0.0.1:5000/cliente_add",{
-                method:"Post",
+                method:"POST",
                 headers:{
                     "Content-Type":"application/json"
-                    
                 },
                 body: JSON.stringify(cliente)
             });
@@ -53,20 +53,22 @@ export default function Cadastro() {
                         router.push("/homeadmin");
                     },5000);
                 }else{
+                    console.error("Erro ao analisar resposta JSON:", error);
                     setMsgStatus("Ocorreu um erro!");
                     setTimeout(()=>{
                         setMsgStatus("");
                         setCliente({
-                            "NM_CLIENTE":"",
-                            "DT_DATA_NASCIMENTO":"",
-                            "NR_CNH":"",
-                            "NR_CPF":"",
-                            "NR_RG":""
+                            "nm_cliente":"",
+                            "dt_data_nascimento":"",
+                            "nr_cnh":"",
+                            "nr_cpf":"",
+                            "nr_rg":""
                         });
                     },5000);
                 }
             }
         }catch (error) {
+            console.error("Erro ao analisar resposta JSON:", error);
         }
     } 
     return (
@@ -75,29 +77,29 @@ export default function Cadastro() {
         <form  onSubmit={handleSubmit} className='table'>
             <div className='div'>
                 <label htmlFor="idNome">Nome</label>
-                <input type="text" name='NM_CLIENTE'id='idNome' placeholder='Digite seu Nome Completo:' value={cliente.NM_CLIENTE} onChange={handleChange}/>
+                <input type="text" name='nm_cliente'id='idNome' placeholder='Digite seu Nome Completo:' value={cliente.nm_cliente} onChange={handleChange}/>
             </div>
         
             <div className='div'>
                 <label htmlFor="idDataNascimento">Data de Nascimento</label>
-                <input type="date" name='DT_DATA_NASCIMENTO'id='idDataNascimento' placeholder='Digite sua data de nascimento:' value={cliente.DT_DATA_NASCIMENTO} onChange={handleChange}/>
+                <input type="date" name='dt_data_nascimento'id='idDataNascimento' placeholder='Digite sua data de nascimento:' value={cliente.dt_data_nascimento} onChange={handleChange}/>
                 
             </div>
             <div className='div'>
                 <label htmlFor="idCPF">CPF</label>
-                <input type="text" name='NR_CPF'id='idCPF' placeholder='Digite seu CPF:' value={cliente.NR_CPF} onChange={handleChange}/>
+                <input type="text" name='nr_cpf'id='idCPF' placeholder='Digite seu CPF:' value={cliente.nr_cpf} onChange={handleChange}/>
             </div>
             <div className='div'>
                 <label htmlFor="idCNH">CNH</label>
-                <input type="text" name='NR_CNH'id='idCNH' placeholder='Digite sua CNH:' value={cliente.NR_CNH} onChange={handleChange}/>
+                <input type="text" name='nr_cnh'id='idCNH' placeholder='Digite sua CNH:' value={cliente.nr_cnh} onChange={handleChange}/>
             </div>
             <div className='div'>
                 <label htmlFor="idRG">RG</label>
-                <input type="text" name='NR_RG'id='idRG' placeholder='Digite seu Rg:' value={cliente.NR_RG} onChange={handleChange}/>
+                <input type="text" name='nr_rg'id='idRG' placeholder='Digite seu Rg:' value={cliente.nr_rg} onChange={handleChange}/>
             </div>
             <div className='link'>
                 <Link href="/homeadmin" className='link'>Voltar</Link>
-                <Link href="/homeadmin" className='link'>Cadastrar</Link>
+                <button className='link'>Cadastrar</button>
             </div>
         </form>
     </div>  

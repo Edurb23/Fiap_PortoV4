@@ -8,17 +8,20 @@ import './atualizacao.scss'
 
 export default function Atualiza({params}) {
 
+    const id = String(params.id)
+    console.log(id)
+
     const router = useRouter();
 
     const [msgstatus, setMsgStatus] = useState("");
 
     const [cliente, setCliente] = useState({
-        "NM_CLIENTE":"",
-        "DT_DATA_NASCIMENTO":"",
-        "NR_CNH":"",
-        "NR_CPF":"",
-        "NR_RG":"",
-        "ID_CLIENTE": params.id
+        "nm_cliente":"",
+        "dt_data_nascimento":"",
+        "nr_cnh":"",
+        "nr_cpf":"",
+        "nr_rg":"",
+        "id_cliente": id
     })
 
 
@@ -30,13 +33,15 @@ export default function Atualiza({params}) {
     useEffect(() => {
         const obterClienteAtual = async () => {
             try{
-                const responseget = await fetch(`http://127.0.0.1:5000/cliente/${params.id}`,{
+                const responseget = await fetch(`http://localhost:8080/api/cliente/${params.id}`,{
                     method:"GET",
                     headers:{
-                        "Content-Type":"application/json"   
+                        "Content-Type":"application/json" 
+                         
                     }
                 });
                 let clienteAtual = await responseget.json();
+                
                 setCliente(clienteAtual);
             }catch(error){
                 console.log(error);
@@ -55,12 +60,11 @@ export default function Atualiza({params}) {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch("http://127.0.0.1:5000/cliente_update",{
+            const response = await fetch(`http://localhost:8080/api/cliente/${id}`,{
                 method:"PUT",
                 headers:{
                     "Content-Type":"application/json"
                 },
-                
                 body: JSON.stringify(cliente)
             });
 
@@ -78,12 +82,12 @@ export default function Atualiza({params}) {
                     setTimeout(()=>{
                         setMsgStatus("");
                         setCliente({
-                            "NM_CLIENTE":"",
-                            "DT_DATA_NASCIMENTO":"",
-                            "NR_CNH":"",
-                            "NR_CPF":"",
-                            "NR_RG":"",
-                            "ID_CLIENTE": params.id
+                            "nm_cliente":"",
+                            "dt_data_nascimento":"",
+                            "nr_cnh":"",
+                            "nr_cpf":"",
+                            "nr_rg":"",
+                            "id_cliente": id
                         });
                     },5000);
                 }
@@ -102,30 +106,33 @@ export default function Atualiza({params}) {
         <form onSubmit={handleSubmit} className='table'>
             <div className='div'>
                 <label htmlFor="idNome">Nome</label>
-                <input type="text" name='NM_CLIENTE'id='idNome' placeholder='Digite seu Nome Completo:' value={cliente.NM_CLIENTE} onChange={handleChange}/>
+                <input type="text" name='nm_cliente'id='idNome' placeholder='Digite seu Nome Completo:' value={cliente.nm_cliente} onChange={handleChange}/>
             </div>
             <div className='div'>
                 <label htmlFor="idDataNascimento">Data de Nascimento</label>
-                <input type="date" name='DT_DATA_NASCIMENTO'id='idDataNascimento' placeholder='Digite sua data de nascimento:' value={cliente.DT_DATA_NASCIMENTO} onChange={handleChange}/>
+                <input type="date" name='dt_data_nascimento'id='idDataNascimento' placeholder='Digite sua data de nascimento:' value={cliente.dt_data_nascimento} onChange={handleChange}/>
             </div>
             <div className='div'>
                 <label htmlFor="idCPF">CPF</label>
-                <input type="text" name='NR_CPF'id='idCPF' placeholder='Digite seu CPF:' value={cliente.NR_CPF} onChange={handleChange}/>
+                <input type="text" name='nr_cpf'id='idCPF' placeholder='Digite seu CPF:' value={cliente.nr_cpf} onChange={handleChange}/>
             </div>
             <div className='div'>
                 <label htmlFor="idCNH">CNH</label>
-                <input type="text" name='NR_CNH'id='idCNH' placeholder='Digite sua CNH:' value={cliente.NR_CNH} onChange={handleChange}/>
+                <input type="text" name='nr_cnh'id='idCNH' placeholder='Digite sua CNH:' value={cliente.nr_cnh} onChange={handleChange}/>
             </div>
             <div className='div'>
                 <label htmlFor="idRG">RG</label>
-                <input type="text" name='NR_RG'id='idRG' placeholder='Digite seu Rg:' value={cliente.NR_RG} onChange={handleChange}/>
+                <input type="text" name='nr_rg'id='idRG' placeholder='Digite seu Rg:' value={cliente.nr_rg} onChange={handleChange}/>
             </div>
             <div className='link'>
                 <Link href="/homeadmin">Voltar</Link>
-                <button>Atualizar</button>
+                <button className='botaoEditar'>Atualizar</button>
             </div>
         </form>
         
     </div>
   )
 }
+
+
+
