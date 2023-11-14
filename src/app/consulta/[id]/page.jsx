@@ -41,57 +41,6 @@ export default function Consulta({params}) {
         obterClienteAtual();
       }, [params.id]);
 
-    const handleBack = (e)=>{
-        router.push("/homeadmin")
-    }
-
-    const handleChange = (e)=>{
-        const {name, value} = e.target;
-        setCliente({...cliente,[name]:value})
-    }
-
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        try {
-            const response = await fetch("http://127.0.0.1:5000/cliente_update",{
-                method:"Put",
-                headers:{
-                    "Content-Type":"application/json"
-                },
-                
-                body: JSON.stringify(cliente)
-            });
-
-            if(response.ok){
-                const clients = await response.json();
-
-                if(clients){
-                    setMsgStatus("Cadastro Realizado com Sucesso!");
-                    setTimeout(()=>{
-                        setMsgStatus("");
-                        router.push("/homeadmin");
-                    },5000);
-                }else{
-                    setMsgStatus("Ocorreu um erro!");
-                    setTimeout(()=>{
-                        setMsgStatus("");
-                        setCliente({
-                            "nm_cliente":"",
-                            "dt_data_nascimento":"",
-                            "nr_cnh":"",
-                            "nr_cpf":"",
-                            "nr_rg":"",
-                            "id_cliente": params.id
-                        });
-                    },5000);
-                }
-            }
-        }catch (error) {
-        }
-    } 
-
-
-
 
   return (
     <div className='dadosclientes'>

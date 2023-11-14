@@ -8,6 +8,9 @@ import './atualizacao.scss'
 
 export default function Atualiza({params}) {
 
+    const id = String(params.id)
+    console.log(id)
+
     const router = useRouter();
 
     const [msgstatus, setMsgStatus] = useState("");
@@ -18,7 +21,7 @@ export default function Atualiza({params}) {
         "nr_cnh":"",
         "nr_cpf":"",
         "nr_rg":"",
-        "id_cliente": params.id
+        "id_cliente": id
     })
 
 
@@ -30,13 +33,15 @@ export default function Atualiza({params}) {
     useEffect(() => {
         const obterClienteAtual = async () => {
             try{
-                const responseget = await fetch(`http://127.0.0.1:5000/cliente/${params.id}`,{
+                const responseget = await fetch(`http://localhost:8080/api/cliente/${params.id}`,{
                     method:"GET",
                     headers:{
-                        "Content-Type":"application/json"   
+                        "Content-Type":"application/json" 
+                         
                     }
                 });
                 let clienteAtual = await responseget.json();
+                
                 setCliente(clienteAtual);
             }catch(error){
                 console.log(error);
@@ -55,12 +60,11 @@ export default function Atualiza({params}) {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch("http://127.0.0.1:5000/cliente_update",{
+            const response = await fetch(`http://localhost:8080/api/cliente/${id}`,{
                 method:"PUT",
                 headers:{
                     "Content-Type":"application/json"
                 },
-                
                 body: JSON.stringify(cliente)
             });
 
@@ -83,7 +87,7 @@ export default function Atualiza({params}) {
                             "nr_cnh":"",
                             "nr_cpf":"",
                             "nr_rg":"",
-                            "id_cliente": params.id
+                            "id_cliente": id
                         });
                     },5000);
                 }
@@ -129,3 +133,6 @@ export default function Atualiza({params}) {
     </div>
   )
 }
+
+
+

@@ -34,11 +34,11 @@ export default function Cadastro() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
+            // const response = await fetch("http://localhost:8080/api/cliente",{
             const response = await fetch("http://127.0.0.1:5000/cliente_add",{
-                method:"Post",
+                method:"POST",
                 headers:{
                     "Content-Type":"application/json"
-                    
                 },
                 body: JSON.stringify(cliente)
             });
@@ -53,6 +53,7 @@ export default function Cadastro() {
                         router.push("/homeadmin");
                     },5000);
                 }else{
+                    console.error("Erro ao analisar resposta JSON:", error);
                     setMsgStatus("Ocorreu um erro!");
                     setTimeout(()=>{
                         setMsgStatus("");
@@ -67,6 +68,7 @@ export default function Cadastro() {
                 }
             }
         }catch (error) {
+            console.error("Erro ao analisar resposta JSON:", error);
         }
     } 
     return (
@@ -97,7 +99,7 @@ export default function Cadastro() {
             </div>
             <div className='link'>
                 <Link href="/homeadmin" className='link'>Voltar</Link>
-                <Link href="/homeadmin" className='link'>Cadastrar</Link>
+                <button>Cadastrar</button>
             </div>
         </form>
     </div>  
